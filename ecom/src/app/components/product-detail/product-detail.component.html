@@ -1,0 +1,68 @@
+<div class="container mx-auto p-6">
+    <!-- Product Gallery -->
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full md:w-1/2 px-4">
+        <div class="product-gallery">
+          <img src="https://via.placeholder.com/600x400" alt="Product Image" class="w-full h-auto rounded-lg shadow-lg mb-4">
+          <div class="flex space-x-4">
+            <img src="https://via.placeholder.com/100x100" alt="Product Thumbnail" class="w-24 h-24 object-cover rounded-lg shadow-lg cursor-pointer">
+            <img src="https://via.placeholder.com/100x100" alt="Product Thumbnail" class="w-24 h-24 object-cover rounded-lg shadow-lg cursor-pointer">
+            <img src="https://via.placeholder.com/100x100" alt="Product Thumbnail" class="w-24 h-24 object-cover rounded-lg shadow-lg cursor-pointer">
+          </div>
+        </div>
+      </div>
+      <!-- Product Details -->
+      <div class="w-full md:w-1/2 px-4">
+        <div class="product-details">
+          <h1 class="text-3xl font-bold mb-4">Product Name</h1>
+          <p class="text-gray-600 mb-4">High-performance wireless headphones with noise cancellation, 20-hour battery life, and premium sound quality.</p>
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-500 text-lg">★★★★☆</div>
+            <span class="ml-2 text-gray-600">(120 reviews)</span>
+          </div>
+          <div class="text-2xl font-bold text-green-600 mb-4">₹ 4999</div>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product Description and Reviews -->
+    <div class="mt-8">
+      <div class="tabs">
+        <ul class="flex border-b">
+          <li class="-mb-px mr-1">
+            <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#description">Description</a>
+          </li>
+          <li class="mr-1">
+            <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#reviews">Reviews</a>
+          </li>
+        </ul>
+      </div>
+      <div id="description" class="p-4">
+        <h2 class="text-2xl font-bold mb-4">Product Description</h2>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div id="reviews" class="p-4">
+        <h2 class="text-2xl font-bold mb-4">Product Reviews</h2>
+        <!-- Review Form -->
+        <form (ngSubmit)="submitReview()" class="mb-8">
+          <div class="mb-4">
+            <label for="reviewerName" class="block text-gray-700 font-bold mb-2">Name</label>
+            <input type="text" id="reviewerName" [(ngModel)]="reviewerName" name="reviewerName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+          <div class="mb-4">
+            <label for="reviewText" class="block text-gray-700 font-bold mb-2">Review</label>
+            <textarea id="reviewText" [(ngModel)]="reviewText" name="reviewText" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit Review</button>
+        </form>
+        <!-- Display Reviews -->
+        <div *ngFor="let review of reviews" class="review mb-4">
+          <div class="flex items-center mb-2">
+            <div class="text-yellow-500 text-lg">★★★★☆</div>
+            <span class="ml-2 text-gray-600">by {{ review.name }}</span>
+          </div>
+          <p class="text-gray-600">{{ review.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

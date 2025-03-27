@@ -1,0 +1,96 @@
+<div class="px-20">
+    <div class="shadow-lg">
+        <owl-carousel-o [options]="customOptions">
+            <div *ngFor="let item of bannerImages; let i = index; trackBy: trackByIndex">
+                <ng-template carouselSlide><img [src]="item.images[0]" alt="images"/></ng-template>  
+            </div>
+          </owl-carousel-o>
+    </div>
+    <div class="mt-4">
+        <h4 class="text-2xl font-bold">Featured Products</h4><br>
+        <div class="flex flex-wrap gap-2">
+            <div class="w-3/12 shadow" *ngFor="let product of featuredProducts; let i = index; trackBy: trackByIndex">
+                <div class="product-card" [routerLink]="'products/'+product._id">
+                    <div class="product-image">
+                        <img 
+                            [src]="product.images" 
+                            alt="Product Name" 
+                            class="product-img"
+                            (mouseover)="zoomIn($event)"
+                            (mouseout)="zoomOut($event)"
+                        >
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">
+                            {{product.name}}
+                        </h3>
+                        <p class="product-description">
+                            High-performance wireless headphones with noise cancellation, 
+                            20-hour battery life, and premium sound quality. 
+                            {{product.description}}
+                        </p>
+                        <div class="product-rating">
+                            <div class="star-rating">
+                                ★★★★☆
+                            </div>
+                        </div>
+                        <div class="price-section">
+                            <div>
+                                <span class="product-price">
+                                    ₹ {{product.Price}}
+                                </span>
+                            </div>
+                            <div class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h4 class="text-2xl font-bold">New Products</h4><br>
+        <div class="flex flex-wrap gap-2">
+            <div class="w-3/12 shadow" *ngFor="let product of newProducts; let i = index; trackBy: trackByIndex">
+                <div class="product-card" [routerLink]="'products/'+product._id">
+                    <div class="product-image">
+                        <img 
+                            [src]="product.images" 
+                            alt="Product Name" 
+                            class="product-img"
+                            (mouseover)="zoomIn($event)"
+                            (mouseout)="zoomOut($event)"
+                        >
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">
+                            {{product.name}}
+                        </h3>
+                        <p class="product-description">
+                            High-performance wireless headphones with noise cancellation,
+                            {{product.description}}
+                        </p>
+                        <div class="product-rating">
+                            <div class="star-rating">
+                                ★★★★☆
+                            </div>
+                        </div>
+                        <div class="price-section">
+                            <div>
+                                <span class="product-price">
+                                    ₹ {{product.Price}}
+                                </span>
+                            </div>
+                            <div class="wishlist-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <app-product-card [product]="product"></app-product-card> -->

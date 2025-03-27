@@ -1,0 +1,78 @@
+// Define variables for easier color and spacing management
+$primary-color: #007bff;
+$secondary-color: #f8f9fa;
+$text-color: #333;
+$text-hover-color: #fff;
+$font-family: Arial, sans-serif;
+$padding: 10px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Global styling
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+header {
+  background-color: $primary-color;
+  box-shadow: $box-shadow;
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding 20px;
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+
+      input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+
+    .profile-link {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .category-menu {
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    padding: $padding 0;
+
+    a {
+      text-decoration: none;
+      color: $text-hover-color;
+      margin: 0 15px;
+      font-size: 1em;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+.logout{
+  color: wheat;
+}

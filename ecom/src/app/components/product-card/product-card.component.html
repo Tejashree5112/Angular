@@ -1,0 +1,39 @@
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="product-image border-b w-full" [routerLink]="'/products/'+product._id">
+        <img 
+            [src]="product.images" 
+            alt="Product Name" 
+            class="product-img w-full h-64 object-cover"
+            (mouseover)="zoomIn($event)"
+            (mouseout)="zoomOut($event)"
+        >
+    </div>
+    <div class="product-details p-4">
+        <h3 class="product-title text-lg font-semibold mb-2">
+            {{product.name}}
+        </h3>
+        <p class="product-description text-gray-600 text-sm mb-4">
+            High-performance wireless headphones with noise cancellation, 
+            20-hour battery life, and premium sound quality. 
+            {{product.description}}
+        </p>
+        <div class="product-rating flex items-center mb-4">
+            <div class="star-rating text-yellow-500">
+                ★★★★☆
+            </div>
+        </div>
+        <div class="price-section flex items-center justify-between">
+            <div>
+                <span class="product-price text-xl font-bold text-green-600">
+                    ₹ {{product.Price}}
+                </span>
+            </div>
+            <div class="wishlist-icon text-red-500 cursor-pointer">
+                <!-- Wishlist Icon (e.g., heart icon) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
